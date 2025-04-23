@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>trip-gil 랜덤 추천</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #e3f2fd;
+      text-align: center;
+      padding: 40px;
+    }
+    .result {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>trip-gil 여행지 랜덤 추천</h1>
+  <button onclick="recommend()">전부 랜덤으로 고르기</button>
+  <div class="result" id="result">여행지를 추천합니다...</div>
+
+  <script>
+    const locations = [
+      '서울 강남구 역삼동', '부산 해운대구 중동', '전북 전주시 완산구', '강원도 강릉시 경포동',
+      '제주도 서귀포시 안덕면', '충남 태안군 안면읍', '경북 경주시 황남동'
+    ];
+
+    function recommend() {
+      const pick = locations[Math.floor(Math.random() * locations.length)];
+      document.getElementById('result').textContent = `추천 지역: ${pick}`;
+    }
+  </script>
+</body>
+</html>
